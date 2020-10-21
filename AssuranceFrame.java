@@ -138,8 +138,13 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
         jLabelDOB.setText("Date de naissance");
 
-        jFTextDOB.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        jFTextDOB.setText("Jan 1, 1970");
+        jFTextDOB.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+        jFTextDOB.setText("yyyy-mm-dd");
+        jFTextDOB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jFTextDOBMouseClicked(evt);
+            }
+        });
 
         jLabelTele.setText("Numero telephone");
 
@@ -242,10 +247,15 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
         jComboMarque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dodge", "Jeep", "GMC", "Ram", "Nissan", "Hyundai", "Chevrolet", "Honda", "Toyota", "Ford" }));
         jComboMarque.setSelectedItem("");
+        jComboMarque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboMarqueMouseClicked(evt);
+            }
+        });
 
         jLabelModel.setText("Model");
 
-        jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1234567890", "abc", "def" }));
+        jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Challenger", "Nitro", "Ram", "Omni", "Viper" }));
 
         jLabelKM.setText("KM annuelle");
 
@@ -491,10 +501,15 @@ public class AssuranceFrame extends javax.swing.JFrame {
         jLabelHabi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelHabi.setText("Rabais habitation");
 
+        jScrollPaneHabi.setBorder(null);
+
         jTextPaneHabi.setEditable(false);
         jTextPaneHabi.setBackground(new java.awt.Color(240, 240, 240));
         jTextPaneHabi.setBorder(null);
         jTextPaneHabi.setText("Si votre habitation est assurée avec nous, nous vous offrons un rabais. Voulez-vous inclure ce rabais à votre soumission?");
+        jTextPaneHabi.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextPaneHabi.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        jTextPaneHabi.setSelectionColor(new java.awt.Color(0, 0, 0));
         jScrollPaneHabi.setViewportView(jTextPaneHabi);
 
         bGroupRabais.add(jRadioHabiY);
@@ -537,6 +552,11 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
         jButtonSub.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonSub.setText("Soumission");
+        jButtonSub.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSubMouseClicked(evt);
+            }
+        });
 
         jButtonCancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonCancel.setText("Annuler");
@@ -639,7 +659,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollMain, javax.swing.GroupLayout.DEFAULT_SIZE, 1205, Short.MAX_VALUE)
+            .addComponent(jScrollMain)
         );
 
         pack();
@@ -679,6 +699,142 @@ public class AssuranceFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButtonCancelMousePressed
 
+    private void jComboMarqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboMarqueMouseClicked
+        if (null != String.valueOf(this.jComboMarque.getSelectedItem())) // TODO add your handling code here:
+        {
+            switch (String.valueOf(this.jComboMarque.getSelectedItem())) {
+                case "Dodge":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Challenger", "Nitro", "Ram", "Omni", "Viper"}));
+                    break;
+                case "Jeep":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"YJ", "Cherokee", "Commander", "Hortbed", "Wangler"}));
+                    break;
+                case "GMC":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Acadia", "Canyon", "Sierra", "Terrain", "Yukon"}));
+                    break;
+                case "Ram":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"1500", "2500", "3500", "Cab", "Promaster"}));
+                    break;
+                case "Nissan":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"GT-R", "Micra", "Leaf", "Qashqai", "Sentra"}));
+                    break;
+                case "Hyundai":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Tucson", "Palisade", "Kona", "Sonata", "Veloster"}));
+                    break;
+                case "Chevrolet":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Camaro", "Corvette", "Cruze", "Spark", "Tahoe"}));
+                    break;
+                case "Honda":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Civic", "Fit", "Accord", "HR-V", "Odyssey"}));
+                    break;
+                case "Toyota":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Corolla", "RAV4", "Camry", "C-HR", "86", "Supra"}));
+                    break;
+                case "Ford":
+                    jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Mustand", "Fiesta", "Explorer", "Ranger", "EcoSport"}));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }//GEN-LAST:event_jComboMarqueMouseClicked
+
+    private void jButtonSubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSubMouseClicked
+        // TODO add your handling code here:
+
+        Assurance a = new Assurance();
+
+        a.setPrenom(this.jTextPrenom.getText());
+        a.setNom(this.jTextNom.getText());
+
+        if (this.jRadioFemale.isSelected()) {
+            a.setSexe('f');
+        } else {
+            a.setSexe('m');
+        }
+
+        a.setDdn(this.jFTextDOB.getText());
+        a.setAge(DateUtil.yearsOld(this.jFTextDOB.getText()));
+        a.setTelNum(this.jFTextTelephone.getText());
+        a.setAdresse(this.jTextAdresse.getText());
+        a.setEmail(this.jTextCourriel.getText());
+        a.setVecYear(String.valueOf(this.jComboAnnee.getSelectedItem()));
+        a.setVecYI(this.jComboAnnee.getSelectedIndex());
+        a.setVecMake(String.valueOf(this.jComboMarque.getSelectedItem()));
+        a.setVecMod(String.valueOf(this.jComboModel.getSelectedItem()));
+        a.setKmPerYr(String.valueOf(this.jComboKM.getSelectedItem()));
+        //int it = this.jComboKM.getSelectedIndex();
+        //a.setKmPerI(it*5000 + 15000);
+        a.setKmPerI(this.jComboKM.getSelectedIndex());
+
+        Boolean[] antiVol = new Boolean[6];
+        for (int i = 0; i < 6; i++) {
+            antiVol[i] = false;
+        }
+
+        if (this.jCheckAlarme.isSelected()) {
+            antiVol[0] = true;
+        }
+        if (this.jCheckAnti.isSelected()) {
+            antiVol[1] = true;
+        }
+        if (this.jCheckMarquage.isSelected()) {
+            antiVol[2] = true;
+        }
+        if (this.jCheckSys.isSelected()) {
+            antiVol[3] = true;
+        }
+        if (this.jCheckAutre.isSelected()) {
+            antiVol[4] = true;
+        }
+        if (this.jCheckAucun.isSelected()) {
+            for (int i = 0; i < 5; i++) {
+                antiVol[i] = false;
+            }
+            antiVol[5] = true;
+        }
+        a.setSysAntiVol(antiVol);
+
+        Boolean[] sitCond = new Boolean[6];
+        for (int i = 0; i < 6; i++) {
+            sitCond[i] = false;
+        }
+
+        if (this.jRBSit1Y.isSelected()) {
+            sitCond[0] = true;
+        }
+        if (this.jRBSit2Y.isSelected()) {
+            sitCond[1] = true;
+        }
+        if (this.jRBSit3Y.isSelected()) {
+            sitCond[2] = true;
+        }
+        if (this.jRBSit4Y.isSelected()) {
+            sitCond[3] = true;
+        }
+        if (this.jRBSit5Y.isSelected()) {
+            sitCond[4] = true;
+        }
+        if (this.jRBSit6Y.isSelected()) {
+            sitCond[5] = true;
+        }
+        a.setDriverSit(sitCond);
+
+        a.setBundle(this.jRadioHabiY.isSelected());
+
+        a.calcPrime();
+        
+        a.print();
+
+    }//GEN-LAST:event_jButtonSubMouseClicked
+
+    private void jFTextDOBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFTextDOBMouseClicked
+        // TODO add your handling code here:
+        if ("yyyy-mm-dd".equals(this.jFTextDOB.getText())) {
+            jFTextDOB.setText("");
+        }
+    }//GEN-LAST:event_jFTextDOBMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -712,78 +868,8 @@ public class AssuranceFrame extends javax.swing.JFrame {
                 //new AssuranceFrame().setVisible(true);
 
                 AssuranceFrame af = new AssuranceFrame();
-                Assurance a = new Assurance();
 
                 af.setVisible(true);
-
-                if (af.jButtonSub.isSelected()) {
-
-                    a.setPrenom(af.jTextPrenom.getText());
-                    a.setNom(af.jTextNom.getText());
-
-                    if (af.jRadioFemale.isSelected()) {
-                        a.setSexe('f');
-                    } else {
-                        a.setSexe('m');
-                    }
-                    
-                    
-
-                    a.setDdn(af.jFTextDOB.getText());
-                    a.setTelNum(af.jFTextTelephone.getText());
-                    a.setAdresse(af.jTextAdresse.getText());
-                    a.setEmail(af.jTextCourriel.getText());
-                    a.setVecYear(String.valueOf(af.jComboAnnee.getSelectedItem()));
-                    a.setVecMake(String.valueOf(af.jComboMarque.getSelectedItem()));
-                    a.setVecMod(String.valueOf(af.jComboModel.getSelectedItem()));
-                    a.setKmPerYr(String.valueOf(af.jComboKM.getSelectedItem()));
-
-                    Boolean[] antiVol = new Boolean[6];
-                    for (int i = 0; i < 6; i++) {
-                        antiVol[i] = false;
-                    }
-
-                    if (af.jCheckAlarme.isSelected()) {
-                        antiVol[0] = true;
-                    } else if (af.jCheckAnti.isSelected()) {
-                        antiVol[1] = true;
-                    } else if (af.jCheckMarquage.isSelected()) {
-                        antiVol[2] = true;
-                    } else if (af.jCheckSys.isSelected()) {
-                        antiVol[3] = true;
-                    } else if (af.jCheckAutre.isSelected()) {
-                        antiVol[4] = true;
-                    } else if (af.jCheckAucun.isSelected()) {
-                        for (int i = 0; i < 5; i++) {
-                            antiVol[i] = false;
-                        }
-                        antiVol[5] = true;
-                    }
-                    a.setSysAntiVol(antiVol);
-
-                    Boolean[] sitCond = new Boolean[6];
-                    for (int i = 0; i < 6; i++) {
-                        sitCond[i] = false;
-                    }
-
-                    if (af.jRBSit1Y.isSelected()) {
-                        sitCond[0] = true;
-                    } else if (af.jRBSit2Y.isSelected()) {
-                        sitCond[1] = true;
-                    } else if (af.jRBSit3Y.isSelected()) {
-                        sitCond[2] = true;
-                    } else if (af.jRBSit4Y.isSelected()) {
-                        sitCond[3] = true;
-                    } else if (af.jRBSit5Y.isSelected()) {
-                        sitCond[4] = true;
-                    } else if (af.jRBSit6Y.isSelected()) {
-                        sitCond[5] = true;
-                    }
-                    a.setDriverSit(sitCond);
-
-                    a.setBundle(af.jRadioHabiY.isSelected());
-
-                }
             }
         });
     }
