@@ -5,8 +5,16 @@
  */
 package tp1;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import jdk.jfr.events.FileWriteEvent;
 
 /**
  *
@@ -289,33 +297,33 @@ public class Assurance {
      *
      */
     public void calcPrime() {
-        double ini;
+        double pIni;
         double pSexe = 0.0;
         double pAntiV;
         double pSit = 0.0;
         double pKM;
-        double pHabi = 0.0;
+        double pVec = 0.0;
 
         if (this.age <= 20) {
-            ini = 500.0;
+            pIni = 500.0;
         } else if (this.age <= 25) {
-            ini = 450.0;
+            pIni = 450.0;
         } else if (this.age <= 30) {
-            ini = 400.0;
+            pIni = 400.0;
         } else if (this.age <= 40) {
-            ini = 350.0;
+            pIni = 350.0;
         } else if (this.age <= 50) {
-            ini = 300.0;
+            pIni = 300.0;
         } else if (this.age <= 60) {
-            ini = 250;
+            pIni = 250;
         } else if (this.age <= 70) {
-            ini = 200.0;
+            pIni = 200.0;
         } else {
-            ini = 100.0;
+            pIni = 100.0;
         }
 
         if (this.getSexe() == 'm') {
-            pSexe = ini * 0.15;
+            pSexe = pIni * 0.15;
         }
 
         Boolean[] antiVol = this.getSysAntiVol();
@@ -328,36 +336,133 @@ public class Assurance {
                     c++;
                 }
             }
-            pAntiV = ini * (0.05 * c);
+            pAntiV = pIni * (0.05 * c);
         }
 
         Boolean[] sit = this.getDriverSit();
         for (int i = 0; i < 5; i++) {
             if (sit[i] == true) {
-                pSit = ini * 0.3;
+                pSit = pIni * 0.3;
                 break;
             }
         }
 
-        pKM = ini * (this.getKmPerI() * 10.0 / 100.0);
-        
-        if(this.getVecYI() != 5){
-            
+        pKM = pIni * (this.getKmPerI() * 10.0 / 100.0);
+
+        if (this.getVecYI() != 5) {
+
+            String toL = this.getVecMake().toLowerCase();
+            String oFile = "voitures/" + toL + "_modeles.txt";
+
+            try {
+                Scanner sc = new Scanner(new File(oFile));
+                ArrayList<String> inp = new ArrayList<String>();
+                String str[] = null;
+
+                while (sc.hasNextLine()) {
+                    inp.add(sc.nextLine());
+                    for (String st : inp) {
+                        str = st.split(" ");
+                    }
+                    int i = 0;
+                    for (String st : str) {
+                        if (st.matches(this.getVecMod())) {
+                            pVec = Double.parseDouble(str[i + 1]);
+                            break;
+                        }
+                        i++;
+                    }
+                }
+                pVec *= ((10 - (2 * this.getVecYI())) / 100.0);
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e);
+            }
         }
-        
-        ini = ini + pSexe + pKM + pSit - pAntiV;
-        
-        if(this.getBundle() == true){
-            ini *= 0.8;
-        }        
-        
-        this.setPrime(ini);
+
+        double pTotal;
+        pTotal = pIni + pSexe + pVec + pKM + pSit - pAntiV;
+        System.out.println("P ini: " + pIni);
+        System.out.println("P sex: " + pSexe);
+        System.out.println("P vec: " + pVec);
+        System.out.println("P KM: " + pKM);
+        System.out.println("P sit: " + pSit);
+        System.out.println("P AntiV: " + pAntiV);
+
+        if (this.getBundle() == true) {
+            pTotal *= 0.8;
+        }
+
+        System.out.println("P Tot: " + pTotal);
+
+        this.setPrime(pTotal);
     }
 
     /**
      *
      */
     public void print() {
+
+        String iFile = "soumission.txt";
+
+        try {
+            FileWriter outP = new FileWriter(iFile, false);
+            PrintWriter outPrint = new PrintWriter(outP);
+
+            outPrint.print("Soumission du ");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd");
+            LocalDateTime now = LocalDateTime.now();
+            outPrint.println(dtf.format(now));
+            outPrint.println("");
+            outPrint.printf("Prenom : %s\n", this.getPrenom());
+            outPrint.printf("Nom : %s\n", this.getNom());
+            if (this.getSexe() == 'm') {
+                outPrint.println("Sexe : Homme");
+            } else {
+                outPrint.println("Sexe : Femme");
+            }
+            outPrint.printf("Date de naissance : %s\n", this.getDdn());
+            outPrint.printf("Age : %d\n", this.getAge());
+            outPrint.printf("# Tele : %s\n", this.getTelNum());
+            outPrint.printf("Adresse : %s\n", this.getAdresse());
+            outPrint.printf("Courriel : %s\n", this.getEmail());
+            outPrint.println("");
+            outPrint.println("Info du vechicule");
+            outPrint.printf("Annee : %s\n", this.getVecYear());
+            outPrint.printf("Marque : %s\n", this.getVecMake());
+            outPrint.printf("Model : %s\n", this.getVecMod());
+            outPrint.printf("KM par annee : %s\n", this.getKmPerYr());
+            outPrint.println("Systems antivols");
+            Boolean[] antiVol = this.getSysAntiVol();
+            outPrint.printf("Alarme: %b\n", antiVol[0]);
+            outPrint.printf("AntiDem: %b\n", antiVol[1]);
+            outPrint.printf("Marquage: %b\n", antiVol[2]);
+            outPrint.printf("System: %b\n", antiVol[3]);
+            outPrint.printf("Autre: %b\n", antiVol[4]);
+            outPrint.printf("Aucun: %b\n", antiVol[5]);
+            outPrint.println("");
+            outPrint.println("Situations");
+            Boolean[] sit = this.getDriverSit();
+            outPrint.printf("3 c/v: %b\n", sit[0]);
+            outPrint.printf("Suspension: %b\n", sit[1]);
+            outPrint.printf("Dossier: %b\n", sit[2]);
+            outPrint.printf("Refusee: %b\n", sit[3]);
+            outPrint.printf("Apprenti: %b\n", sit[4]);
+            outPrint.printf("$100k+: %b\n", sit[5]);
+            outPrint.println("");
+            outPrint.printf("Bundle: %b\n", this.getBundle());
+            outPrint.println("");
+            outPrint.printf("Prime total : %.2f\n", this.getPrime());
+
+            outPrint.close();
+            outP.close();
+
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        
+        
+        /*
         System.out.print("Soumission du ");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
@@ -403,6 +508,7 @@ public class Assurance {
 
         System.out.println("");
         System.out.printf("Prime total : %f\n", this.getPrime());
+        */
 
     }
 
