@@ -5,6 +5,9 @@
  */
 package tp1;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jerry
@@ -102,7 +105,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
         jRadioHabiN = new javax.swing.JRadioButton();
         jPanelFin = new javax.swing.JPanel();
         jButtonSub = new javax.swing.JButton();
-        jButtonCancel = new javax.swing.JButton();
+        jButtonClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -241,7 +244,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
         jLabelAnnee.setText("Annee");
 
-        jComboAnnee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015 et avant" }));
+        jComboAnnee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009 et avant" }));
 
         jLabelMarque.setText("Marque");
 
@@ -417,9 +420,6 @@ public class AssuranceFrame extends javax.swing.JFrame {
                     .addComponent(jLabelSit4)
                     .addComponent(jLabelSit1)
                     .addGroup(jPanelSitLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jLabelSitTitle))
-                    .addGroup(jPanelSitLayout.createSequentialGroup()
                         .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelSit5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelSitLayout.createSequentialGroup()
@@ -435,18 +435,20 @@ public class AssuranceFrame extends javax.swing.JFrame {
                                 .addComponent(jRBSit5N, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addComponent(jRBSit6N, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addComponent(jLabelSit6)
-                    .addGroup(jPanelSitLayout.createSequentialGroup()
-                        .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRBSit2Y)
-                            .addComponent(jLabelSit2)
-                            .addComponent(jLabelSit3)
-                            .addComponent(jRBSit3Y)
-                            .addComponent(jRBSit1Y))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRBSit3N)
-                            .addComponent(jRBSit2N)
-                            .addComponent(jRBSit1N))))
+                    .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabelSitTitle)
+                        .addGroup(jPanelSitLayout.createSequentialGroup()
+                            .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jRBSit2Y)
+                                .addComponent(jLabelSit2)
+                                .addComponent(jLabelSit3)
+                                .addComponent(jRBSit3Y)
+                                .addComponent(jRBSit1Y))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanelSitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jRBSit3N)
+                                .addComponent(jRBSit2N)
+                                .addComponent(jRBSit1N)))))
                 .addGap(12, 12, 12))
         );
         jPanelSitLayout.setVerticalGroup(
@@ -557,11 +559,11 @@ public class AssuranceFrame extends javax.swing.JFrame {
             }
         });
 
-        jButtonCancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonCancel.setText("Annuler");
-        jButtonCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonClose.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonClose.setText("Fermer");
+        jButtonClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButtonCancelMousePressed(evt);
+                jButtonCloseMousePressed(evt);
             }
         });
 
@@ -573,7 +575,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButtonSub)
                 .addGap(55, 55, 55)
-                .addComponent(jButtonCancel)
+                .addComponent(jButtonClose)
                 .addContainerGap())
         );
         jPanelFinLayout.setVerticalGroup(
@@ -582,7 +584,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSub)
-                    .addComponent(jButtonCancel))
+                    .addComponent(jButtonClose))
                 .addContainerGap())
         );
 
@@ -600,25 +602,29 @@ public class AssuranceFrame extends javax.swing.JFrame {
                             .addComponent(jSep3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSep4, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jPanelVec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanelAnti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMainLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanelSit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanelSit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelMainLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jPanelVec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanelAnti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
                 .addGap(12, 12, 12))
+            .addGroup(jPanelMainLayout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanelMainLayout.createSequentialGroup()
                 .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanelHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43)
+                        .addComponent(jPanelHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(91, 91, 91)
+                        .addComponent(jPanelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelMainLayout.setVerticalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,9 +643,9 @@ public class AssuranceFrame extends javax.swing.JFrame {
                 .addComponent(jPanelSit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jSep3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelHabi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(jSep4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -693,10 +699,10 @@ public class AssuranceFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextPrenomMouseClicked
 
-    private void jButtonCancelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelMousePressed
+    private void jButtonCloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCloseMousePressed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButtonCancelMousePressed
+    }//GEN-LAST:event_jButtonCloseMousePressed
 
     private void jComboMarqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboMarqueMouseClicked
         if (null != String.valueOf(this.jComboMarque.getSelectedItem())) // TODO add your handling code here:
@@ -740,90 +746,107 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
     private void jButtonSubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSubMouseClicked
         // TODO add your handling code here:
+        JFrame f = new JFrame();
 
-        Assurance a = new Assurance();
-
-        a.setPrenom(this.jTextPrenom.getText());
-        a.setNom(this.jTextNom.getText());
-
-        if (this.jRadioFemale.isSelected()) {
-            a.setSexe('f');
+        if (this.jTextPrenom.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(f, "Error: Prenom. Ex: Justin", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if (this.jTextNom.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(f, "Error: Nom. Ex: Trudeau", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if (!this.jRadioMale.isSelected() && !this.jRadioFemale.isSelected()) {
+            JOptionPane.showMessageDialog(f, "Error: Sexe. Il faut etre male ou female", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if ("yyyy-mm-dd".equals(this.jFTextDOB.getText()) || this.jFTextDOB.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(f, "Error: Date de naissance. Ex: 1970-01-01", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if (!this.jFTextTelephone.getText().matches("\\d{3}[-s]\\d{3}[-s]\\d{4}")) {
+            JOptionPane.showMessageDialog(f, "Error: # Telephone. Ex: 819-123-4567", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if (this.jTextAdresse.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(f, "Error: Adresse complete. Ex: 1111 rue de la Redondance, Sherbrooke, PQ J1J 1J1", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else if (!this.jTextCourriel.getText().matches("^(.+)@(.+)$")) {
+            JOptionPane.showMessageDialog(f, "Error: Adresse courriel. Ex: test@test.com", "Alert", JOptionPane.WARNING_MESSAGE);
         } else {
-            a.setSexe('m');
-        }
+            Assurance a = new Assurance();
 
-        a.setDdn(this.jFTextDOB.getText());
-        a.setAge(DateUtil.yearsOld(this.jFTextDOB.getText()));
-        a.setTelNum(this.jFTextTelephone.getText());
-        a.setAdresse(this.jTextAdresse.getText());
-        a.setEmail(this.jTextCourriel.getText());
-        a.setVecYear(String.valueOf(this.jComboAnnee.getSelectedItem()));
-        a.setVecYI(this.jComboAnnee.getSelectedIndex());
-        a.setVecMake(String.valueOf(this.jComboMarque.getSelectedItem()));
-        a.setVecMod(String.valueOf(this.jComboModel.getSelectedItem()));
-        a.setKmPerYr(String.valueOf(this.jComboKM.getSelectedItem()));
-        //int it = this.jComboKM.getSelectedIndex();
-        //a.setKmPerI(it*5000 + 15000);
-        a.setKmPerI(this.jComboKM.getSelectedIndex());
+            a.setPrenom(this.jTextPrenom.getText());
+            a.setNom(this.jTextNom.getText());
 
-        Boolean[] antiVol = new Boolean[6];
-        for (int i = 0; i < 6; i++) {
-            antiVol[i] = false;
-        }
+            if (this.jRadioFemale.isSelected()) {
+                a.setSexe('f');
+            } else {
+                a.setSexe('m');
+            }
 
-        if (this.jCheckAlarme.isSelected()) {
-            antiVol[0] = true;
-        }
-        if (this.jCheckAnti.isSelected()) {
-            antiVol[1] = true;
-        }
-        if (this.jCheckMarquage.isSelected()) {
-            antiVol[2] = true;
-        }
-        if (this.jCheckSys.isSelected()) {
-            antiVol[3] = true;
-        }
-        if (this.jCheckAutre.isSelected()) {
-            antiVol[4] = true;
-        }
-        if (this.jCheckAucun.isSelected()) {
-            for (int i = 0; i < 5; i++) {
+            a.setDdn(this.jFTextDOB.getText());
+            a.setAge(DateUtil.yearsOld(this.jFTextDOB.getText()));
+            a.setTelNum(this.jFTextTelephone.getText());
+            a.setAdresse(this.jTextAdresse.getText());
+            a.setEmail(this.jTextCourriel.getText());
+            a.setVecYear(String.valueOf(this.jComboAnnee.getSelectedItem()));
+            a.setVecYI(this.jComboAnnee.getSelectedIndex());
+            a.setVecMake(String.valueOf(this.jComboMarque.getSelectedItem()));
+            a.setVecMod(String.valueOf(this.jComboModel.getSelectedItem()));
+            a.setKmPerYr(String.valueOf(this.jComboKM.getSelectedItem()));
+            a.setKmPerI(this.jComboKM.getSelectedIndex());
+
+            Boolean[] antiVol = new Boolean[6];
+            for (int i = 0; i < 6; i++) {
                 antiVol[i] = false;
             }
-            antiVol[5] = true;
-        }
-        a.setSysAntiVol(antiVol);
 
-        Boolean[] sitCond = new Boolean[6];
-        for (int i = 0; i < 6; i++) {
-            sitCond[i] = false;
-        }
+            if (this.jCheckAlarme.isSelected()) {
+                antiVol[0] = true;
+            }
+            if (this.jCheckAnti.isSelected()) {
+                antiVol[1] = true;
+            }
+            if (this.jCheckMarquage.isSelected()) {
+                antiVol[2] = true;
+            }
+            if (this.jCheckSys.isSelected()) {
+                antiVol[3] = true;
+            }
+            if (this.jCheckAutre.isSelected()) {
+                antiVol[4] = true;
+            }
+            if (this.jCheckAucun.isSelected()) {
+                for (int i = 0; i < 5; i++) {
+                    antiVol[i] = false;
+                }
+                antiVol[5] = true;
+            }
+            a.setSysAntiVol(antiVol);
 
-        if (this.jRBSit1Y.isSelected()) {
-            sitCond[0] = true;
-        }
-        if (this.jRBSit2Y.isSelected()) {
-            sitCond[1] = true;
-        }
-        if (this.jRBSit3Y.isSelected()) {
-            sitCond[2] = true;
-        }
-        if (this.jRBSit4Y.isSelected()) {
-            sitCond[3] = true;
-        }
-        if (this.jRBSit5Y.isSelected()) {
-            sitCond[4] = true;
-        }
-        if (this.jRBSit6Y.isSelected()) {
-            sitCond[5] = true;
-        }
-        a.setDriverSit(sitCond);
+            Boolean[] sitCond = new Boolean[6];
+            for (int i = 0; i < 6; i++) {
+                sitCond[i] = false;
+            }
 
-        a.setBundle(this.jRadioHabiY.isSelected());
+            if (this.jRBSit1Y.isSelected()) {
+                sitCond[0] = true;
+            }
+            if (this.jRBSit2Y.isSelected()) {
+                sitCond[1] = true;
+            }
+            if (this.jRBSit3Y.isSelected()) {
+                sitCond[2] = true;
+            }
+            if (this.jRBSit4Y.isSelected()) {
+                sitCond[3] = true;
+            }
+            if (this.jRBSit5Y.isSelected()) {
+                sitCond[4] = true;
+            }
+            if (this.jRBSit6Y.isSelected()) {
+                sitCond[5] = true;
+            }
+            a.setDriverSit(sitCond);
 
-        a.calcPrime();
+            a.setBundle(this.jRadioHabiY.isSelected());
 
-        a.print();
+            a.calcPrime();
+
+            a.print();
+
+            a.displayPrime();
+        }
 
     }//GEN-LAST:event_jButtonSubMouseClicked
 
@@ -877,7 +900,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton JrbSit4N;
     private javax.swing.ButtonGroup bGroupRabais;
     private javax.swing.ButtonGroup bGroupSexe;
-    private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonClose;
     private javax.swing.JButton jButtonSub;
     private javax.swing.JCheckBox jCheckAlarme;
     private javax.swing.JCheckBox jCheckAnti;

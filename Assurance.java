@@ -14,7 +14,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import jdk.jfr.events.FileWriteEvent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -349,7 +350,7 @@ public class Assurance {
 
         pKM = pIni * (this.getKmPerI() * 10.0 / 100.0);
 
-        if (this.getVecYI() != 5) {
+        if (this.getVecYI() < 5) {
 
             String toL = this.getVecMake().toLowerCase();
             String oFile = "voitures/" + toL + "_modeles.txt";
@@ -382,18 +383,19 @@ public class Assurance {
 
         double pTotal;
         pTotal = pIni + pSexe + pVec + pKM + pSit - pAntiV;
+        /*
         System.out.println("P ini: " + pIni);
         System.out.println("P sex: " + pSexe);
         System.out.println("P vec: " + pVec);
         System.out.println("P KM: " + pKM);
         System.out.println("P sit: " + pSit);
         System.out.println("P AntiV: " + pAntiV);
-
+         */
         if (this.getBundle() == true) {
             pTotal *= 0.8;
         }
 
-        System.out.println("P Tot: " + pTotal);
+        //System.out.println("P Tot: " + pTotal);
 
         this.setPrime(pTotal);
     }
@@ -460,8 +462,7 @@ public class Assurance {
         } catch (IOException e) {
             System.out.println(e);
         }
-        
-        
+
         /*
         System.out.print("Soumission du ");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd");
@@ -508,8 +509,15 @@ public class Assurance {
 
         System.out.println("");
         System.out.printf("Prime total : %f\n", this.getPrime());
-        */
-
+         */
     }
+    
+    /**
+     * 
+     */
+    public void displayPrime(){
+        JFrame f = new JFrame();
+        JOptionPane.showMessageDialog(f, "Avec l'information, votre prime d'assurance est $" + this.getPrime());
+    } 
 
 }

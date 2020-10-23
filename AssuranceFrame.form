@@ -89,34 +89,38 @@
                                   <Component id="jSep4" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jPanelVec" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jPanelAnti" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanelSit" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="jPanelVec" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jPanelAnti" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                      <Component id="jPanelFin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPanelInfo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPanelHabi" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="jPanelHabi" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                              <Component id="jPanelFin" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="jPanelInfo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -138,9 +142,9 @@
                       <Component id="jPanelSit" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jSep3" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanelHabi" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jSep4" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanelFin" min="-2" max="-2" attributes="0"/>
@@ -400,13 +404,19 @@
                 <Component class="javax.swing.JComboBox" name="jComboAnnee">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="6">
+                      <StringArray count="12">
                         <StringItem index="0" value="2020"/>
                         <StringItem index="1" value="2019"/>
                         <StringItem index="2" value="2018"/>
                         <StringItem index="3" value="2017"/>
                         <StringItem index="4" value="2016"/>
-                        <StringItem index="5" value="2015 et avant"/>
+                        <StringItem index="5" value="2015"/>
+                        <StringItem index="6" value="2014"/>
+                        <StringItem index="7" value="2013"/>
+                        <StringItem index="8" value="2012"/>
+                        <StringItem index="9" value="2011"/>
+                        <StringItem index="10" value="2010"/>
+                        <StringItem index="11" value="2009 et avant"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -600,10 +610,6 @@
                               <Component id="jLabelSit4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelSit1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                                  <Component id="jLabelSitTitle" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelSit5" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
@@ -625,19 +631,22 @@
                                   </Group>
                               </Group>
                               <Component id="jLabelSit6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jRBSit2Y" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelSit2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelSit3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRBSit3Y" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRBSit1Y" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jRBSit3N" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRBSit2N" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRBSit1N" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="jLabelSitTitle" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRBSit2Y" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelSit2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelSit3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRBSit3Y" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRBSit1Y" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jRBSit3N" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRBSit2N" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRBSit1N" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -951,7 +960,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButtonSub" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jButtonCancel" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonClose" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -962,7 +971,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButtonSub" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButtonCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonClose" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -981,15 +990,15 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonSubMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButtonCancel">
+                <Component class="javax.swing.JButton" name="jButtonClose">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Annuler"/>
+                    <Property name="text" type="java.lang.String" value="Fermer"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonCancelMousePressed"/>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonCloseMousePressed"/>
                   </Events>
                 </Component>
               </SubComponents>
