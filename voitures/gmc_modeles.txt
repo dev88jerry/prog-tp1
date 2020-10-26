@@ -1,0 +1,5 @@
+Acadia 20000
+Canyon 40000
+Sierra 45000
+Terrain 42069
+Yukon 100000

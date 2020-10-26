@@ -1,0 +1,5 @@
+Camaro 30000
+Corvette 420000
+Cruze 25
+Spark 70000
+Tahoe 60000

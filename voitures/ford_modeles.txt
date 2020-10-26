@@ -1,0 +1,5 @@
+Mustand 45000
+Fiesta 76000
+Explorer 34000
+Ranger 12000
+EcoSport 23000

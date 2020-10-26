@@ -1,0 +1,5 @@
+YJ 30000
+Cherokee 35000
+Commander 40000
+Hortbed 30000
+Wangler 30000

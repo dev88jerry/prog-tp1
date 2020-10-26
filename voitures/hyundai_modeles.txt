@@ -1,0 +1,5 @@
+Tucson 30000
+Palisade 25000
+Kona 60000
+Sonata 45000
+Veloster 35000
