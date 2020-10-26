@@ -1,0 +1,35 @@
+Soumission du 2020/10/26
+
+Prenom : Justin
+Nom : Trudeau
+Sexe : Homme
+Date de naissance : 1971-12-25
+Age : 48
+# Tele : 613-393-1971
+Adresse : 24 Sussex Dr, Ottawa, ON, K1M 1M4
+Courriel : justin.trudeau@pmo.gc.ca
+
+Info du vechicule
+Annee : 2020
+Marque : Chevrolet
+Model : Corvette
+KM par annee : 15001 - 20000
+Systems antivols
+Alarme: true
+AntiDem: true
+Marquage: true
+System: true
+Autre: true
+Aucun: false
+
+Situations
+3 c/v: false
+Suspension: false
+Dossier: false
+Refusee: false
+Apprenti: false
+$100k+: false
+
+Bundle: true
+
+Prime total : 33840.00
