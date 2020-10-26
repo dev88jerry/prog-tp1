@@ -9,9 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * Class primaire pour l'interface
  *
  * @author Jerry
- *
  */
 public class AssuranceFrame extends javax.swing.JFrame {
 
@@ -240,7 +240,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
         );
 
         jLabelVec.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelVec.setText("A propos du vehicule");
+        jLabelVec.setText("Information du vehicule");
 
         jLabelAnnee.setText("Annee");
 
@@ -307,7 +307,7 @@ public class AssuranceFrame extends javax.swing.JFrame {
         );
 
         jLabelAnti.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelAnti.setText("Systems antivols");
+        jLabelAnti.setText("Systemes antivols");
 
         jCheckAlarme.setText("Alarme sonore");
 
@@ -593,61 +593,63 @@ public class AssuranceFrame extends javax.swing.JFrame {
         jPanelMainLayout.setHorizontalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMainLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMainLayout.createSequentialGroup()
-                        .addContainerGap()
+                    .addGroup(jPanelMainLayout.createSequentialGroup()
                         .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSep2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSep1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSep3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSep4, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addComponent(jSep4, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(12, 12, 12))
                     .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanelSit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(10, 10, 10)
                         .addComponent(jPanelVec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanelAnti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)))
-                .addGap(12, 12, 12))
-            .addGroup(jPanelMainLayout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(32, 32, 32))))
             .addGroup(jPanelMainLayout.createSequentialGroup()
                 .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMainLayout.createSequentialGroup()
+                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addComponent(jPanelSit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jPanelHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMainLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jPanelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelMainLayout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jPanelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelMainLayout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanelMainLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jPanelHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelMainLayout.setVerticalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSep1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelVec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelAnti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSep2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelSit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSep3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelHabi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(23, 23, 23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSep4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -670,43 +672,69 @@ public class AssuranceFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Methode pour enlever l'adresse deja soumis
+     *
+     * @param evt
+     */
     private void jTextAdresseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextAdresseMouseClicked
-        // TODO add your handling code here:
         if ("1111 rue de la Redondance, Sherbrooke, PQ J1J 1J1".equals(this.jTextAdresse.getText())) {
             jTextAdresse.setText("");
         }
 
     }//GEN-LAST:event_jTextAdresseMouseClicked
 
+    /**
+     * Methode pour enlever le # tele deja soumis
+     *
+     * @param evt
+     */
     private void jFTextTelephoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFTextTelephoneMouseClicked
-        // TODO add your handling code here:
         if ("123-456-7890".equals(this.jFTextTelephone.getText())) {
             jFTextTelephone.setText("");
         }
     }//GEN-LAST:event_jFTextTelephoneMouseClicked
 
+    /**
+     * Methode pour enlever le text de Nom
+     *
+     * @param evt
+     */
     private void jTextNomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextNomMouseClicked
-        // TODO add your handling code here:
         if ("Nom".equals(this.jTextNom.getText())) {
             jTextNom.setText("");
         }
     }//GEN-LAST:event_jTextNomMouseClicked
 
+    /**
+     * Methode pour enlever le text de Prenom
+     *
+     * @param evt
+     */
     private void jTextPrenomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextPrenomMouseClicked
-        // TODO add your handling code here:
         if ("Prenom".equals(this.jTextPrenom.getText())) {
             jTextPrenom.setText("");
         }
     }//GEN-LAST:event_jTextPrenomMouseClicked
 
-    private void jButtonCloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCloseMousePressed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButtonCloseMousePressed
+    /**
+     * Methode pour enlever le text du date de naissance
+     *
+     * @param evt
+     */
+    private void jFTextDOBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFTextDOBMouseClicked
+        if ("yyyy-mm-dd".equals(this.jFTextDOB.getText())) {
+            jFTextDOB.setText("");
+        }
+    }//GEN-LAST:event_jFTextDOBMouseClicked
 
+    /**
+     * Methode pour changer les modeles de voitures apres la marque choisi
+     *
+     * @param evt
+     */
     private void jComboMarqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboMarqueMouseClicked
-        if (null != String.valueOf(this.jComboMarque.getSelectedItem())) // TODO add your handling code here:
-        {
+        if (null != String.valueOf(this.jComboMarque.getSelectedItem())) {
             switch (String.valueOf(this.jComboMarque.getSelectedItem())) {
                 case "Dodge":
                     jComboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Challenger", "Nitro", "Ram", "Omni", "Viper"}));
@@ -744,8 +772,14 @@ public class AssuranceFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboMarqueMouseClicked
 
+    /**
+     * button soumission 1. Verification des champs non rempli 
+     * 2. Verification des champs date de naissance, telephone et courriel 
+     * Finallement, on passe les donnees de l'interface a la class Assurance
+     *
+     * @param evt
+     */
     private void jButtonSubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSubMouseClicked
-        // TODO add your handling code here:
         JFrame f = new JFrame();
 
         if (this.jTextPrenom.getText().isEmpty()) {
@@ -850,12 +884,14 @@ public class AssuranceFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonSubMouseClicked
 
-    private void jFTextDOBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFTextDOBMouseClicked
-        // TODO add your handling code here:
-        if ("yyyy-mm-dd".equals(this.jFTextDOB.getText())) {
-            jFTextDOB.setText("");
-        }
-    }//GEN-LAST:event_jFTextDOBMouseClicked
+    /**
+     * Code pour fermer le program quand fermer est selectione
+     *
+     * @param evt
+     */
+    private void jButtonCloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCloseMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonCloseMousePressed
 
     /**
      * @param args the command line arguments
@@ -887,7 +923,6 @@ public class AssuranceFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new AssuranceFrame().setVisible(true);
 
                 AssuranceFrame af = new AssuranceFrame();
 

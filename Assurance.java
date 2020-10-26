@@ -5,19 +5,20 @@
  */
 package tp1;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * Class primaire pour entree les donnees de l'interface
  *
  * @author Jerry
  */
@@ -43,6 +44,8 @@ public class Assurance {
     private double prime;
 
     /**
+     * Methode pour retourner le prenom
+     *
      * @return the prenom
      */
     public String getPrenom() {
@@ -50,6 +53,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le prenom
+     *
      * @param prenom the prenom to set
      */
     public void setPrenom(String prenom) {
@@ -57,6 +62,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner le nom
+     *
      * @return the nom
      */
     public String getNom() {
@@ -64,6 +71,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le nom
+     *
      * @param nom the nom to set
      */
     public void setNom(String nom) {
@@ -71,6 +80,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner le sex, soit m ou f
+     *
      * @return the sexe
      */
     public char getSexe() {
@@ -78,6 +89,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le sexe
+     *
      * @param sexe the sexe to set
      */
     public void setSexe(char sexe) {
@@ -85,6 +98,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner la date de naissance
+     *
      * @return the ddn
      */
     public String getDdn() {
@@ -92,6 +107,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner la date de naissance, yyyy-mm-dd
+     *
      * @param ddn the ddn to set
      */
     public void setDdn(String ddn) {
@@ -99,6 +116,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner le numero de telephone
+     *
      * @return the telNum
      */
     public String getTelNum() {
@@ -106,6 +125,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le numero de telephone, ###-###-####
+     *
      * @param telNum the telNum to set
      */
     public void setTelNum(String telNum) {
@@ -113,6 +134,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'adresse
+     *
      * @return the adresse
      */
     public String getAdresse() {
@@ -120,6 +143,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner l'adresse
+     *
      * @param adresse the adresse to set
      */
     public void setAdresse(String adresse) {
@@ -127,6 +152,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'adresse courriel
+     *
      * @return the email
      */
     public String getEmail() {
@@ -134,6 +161,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner l'adresse courriel
+     *
      * @param email the email to set
      */
     public void setEmail(String email) {
@@ -141,6 +170,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'annee du vehicule
+     *
      * @return the vecYear
      */
     public String getVecYear() {
@@ -148,6 +179,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner l'annee du vehicule
+     *
      * @param vecYear the vecYear to set
      */
     public void setVecYear(String vecYear) {
@@ -155,6 +188,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner la marque du vehicule
+     *
      * @return the vecMake
      */
     public String getVecMake() {
@@ -162,6 +197,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner la marque du vehicule
+     *
      * @param vecMake the vecMake to set
      */
     public void setVecMake(String vecMake) {
@@ -169,6 +206,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner le model du vehicule
+     *
      * @return the vecMod
      */
     public String getVecMod() {
@@ -176,6 +215,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le model du vehicule
+     *
      * @param vecMod the vecMod to set
      */
     public void setVecMod(String vecMod) {
@@ -183,6 +224,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour reyourner le nombre de KM/annee
+     *
      * @return the kmPerYr
      */
     public String getKmPerYr() {
@@ -190,6 +233,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le nombre de KM/annee
+     *
      * @param kmPerYr the kmPerYr to set
      */
     public void setKmPerYr(String kmPerYr) {
@@ -197,6 +242,9 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner un array[6] de bool pour la situation du
+     * conducteur
+     *
      * @return the driverSit
      */
     public Boolean[] getDriverSit() {
@@ -204,6 +252,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner un array[6] de bool pour la situation du conducteur
+     *
      * @param driverSit the driverSit to set
      */
     public void setDriverSit(Boolean[] driverSit) {
@@ -211,6 +261,9 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner un array[6] de bool pour les systems antivols de
+     * vehicule
+     *
      * @return the sysAntiVol
      */
     public Boolean[] getSysAntiVol() {
@@ -218,6 +271,9 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner un array[6] de bool pour les systems antivols de
+     * vehicule
+     *
      * @param sysAntiVol the sysAntiVol to set
      */
     public void setSysAntiVol(Boolean[] sysAntiVol) {
@@ -225,6 +281,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner le rabais
+     *
      * @return the bundle
      */
     public Boolean getBundle() {
@@ -232,6 +290,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner le rabais
+     *
      * @param bundle the bundle to set
      */
     public void setBundle(Boolean bundle) {
@@ -239,6 +299,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner la prime d'assurance
+     *
      * @return the prime
      */
     public double getPrime() {
@@ -246,6 +308,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner la prime d'assurance
+     *
      * @param prime the prime to set
      */
     public void setPrime(double prime) {
@@ -253,6 +317,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'age
+     *
      * @return the age
      */
     public int getAge() {
@@ -260,6 +326,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'age
+     *
      * @param age the age to set
      */
     public void setAge(int age) {
@@ -267,6 +335,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'index du KM/annee
+     *
      * @return the kmPerI
      */
     public int getKmPerI() {
@@ -274,6 +344,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner l'index du KM/annee
+     *
      * @param kmPerI the kmPerI to set
      */
     public void setKmPerI(int kmPerI) {
@@ -281,6 +353,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour retourner l'index de l'annee du vehicule
+     *
      * @return the vecYI
      */
     public int getVecYI() {
@@ -288,6 +362,8 @@ public class Assurance {
     }
 
     /**
+     * Methode pour assigner l'index de l'annee du vehicule
+     *
      * @param vecYI the vecYI to set
      */
     public void setVecYI(int vecYI) {
@@ -295,7 +371,8 @@ public class Assurance {
     }
 
     /**
-     *
+     * Methode pour calculer la prime d'assurance. Quand calcule, on met le
+     * montant dans la prime
      */
     public void calcPrime() {
         double pIni;
@@ -355,13 +432,17 @@ public class Assurance {
             String toL = this.getVecMake().toLowerCase();
             String oFile = "voitures/" + toL + "_modeles.txt";
 
-            try {
-                Scanner sc = new Scanner(new File(oFile));
-                ArrayList<String> inp = new ArrayList<String>();
-                String str[] = null;
+            InputStream is = null;
+            BufferedReader br = null;
 
-                while (sc.hasNextLine()) {
-                    inp.add(sc.nextLine());
+            ArrayList<String> inp = new ArrayList<String>();
+            String str[] = null;
+            is = Assurance.class.getResourceAsStream(oFile);
+            br = new BufferedReader(new InputStreamReader(is));
+            String line;
+            try {
+                while (null != (line = br.readLine())) {
+                    inp.add(line);
                     for (String st : inp) {
                         str = st.split(" ");
                     }
@@ -374,34 +455,32 @@ public class Assurance {
                         i++;
                     }
                 }
-                pVec *= ((10 - (2 * this.getVecYI())) / 100.0);
-
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
+            } catch (IOException ex) {
+                System.out.println(ex);
             }
+
+            pVec *= ((10 - (2 * this.getVecYI())) / 100.0);
+            try {
+                br.close();
+                is.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+
         }
 
         double pTotal;
         pTotal = pIni + pSexe + pVec + pKM + pSit - pAntiV;
-        /*
-        System.out.println("P ini: " + pIni);
-        System.out.println("P sex: " + pSexe);
-        System.out.println("P vec: " + pVec);
-        System.out.println("P KM: " + pKM);
-        System.out.println("P sit: " + pSit);
-        System.out.println("P AntiV: " + pAntiV);
-         */
+
         if (this.getBundle() == true) {
             pTotal *= 0.8;
         }
-
-        //System.out.println("P Tot: " + pTotal);
 
         this.setPrime(pTotal);
     }
 
     /**
-     *
+     * Methode pour imprimer les donnees dans un ficher "soumission.txt"
      */
     public void print() {
 
@@ -412,7 +491,7 @@ public class Assurance {
             PrintWriter outPrint = new PrintWriter(outP);
 
             outPrint.print("Soumission du ");
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             LocalDateTime now = LocalDateTime.now();
             outPrint.println(dtf.format(now));
             outPrint.println("");
@@ -462,62 +541,14 @@ public class Assurance {
         } catch (IOException e) {
             System.out.println(e);
         }
-
-        /*
-        System.out.print("Soumission du ");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
-        System.out.println("");
-        System.out.printf("Prenom : %s\n", this.getPrenom());
-        System.out.printf("Nom : %s\n", this.getNom());
-        if (this.getSexe() == 'm') {
-            System.out.println("Sexe : Homme");
-        } else {
-            System.out.println("Sexe : Femme");
-        }
-        System.out.printf("Date de naissance : %s\n", this.getDdn());
-        System.out.printf("Age : %d\n", this.getAge());
-        System.out.printf("# Tele : %s\n", this.getTelNum());
-        System.out.printf("Adresse : %s\n", this.getAdresse());
-        System.out.printf("Courriel : %s\n", this.getEmail());
-        System.out.println("");
-        System.out.println("Info du vechicule");
-        System.out.printf("Annee : %s\n", this.getVecYear());
-        System.out.printf("Marque : %s\n", this.getVecMake());
-        System.out.printf("Model : %s\n", this.getVecMod());
-        System.out.printf("KM : %s\n", this.getKmPerYr());
-        System.out.println("Systems antivols");
-        Boolean[] antiVol = this.getSysAntiVol();
-        System.out.printf("Alarme: %b\n", antiVol[0]);
-        System.out.printf("AntiDem: %b\n", antiVol[1]);
-        System.out.printf("Marquage: %b\n", antiVol[2]);
-        System.out.printf("System: %b\n", antiVol[3]);
-        System.out.printf("Autre: %b\n", antiVol[4]);
-        System.out.printf("Aucun: %b\n", antiVol[5]);
-        System.out.println("");
-        System.out.println("Situations");
-        Boolean[] sit = this.getDriverSit();
-        System.out.printf("3 c/v: %b\n", sit[0]);
-        System.out.printf("Suspension: %b\n", sit[1]);
-        System.out.printf("Dossier: %b\n", sit[2]);
-        System.out.printf("Refusee: %b\n", sit[3]);
-        System.out.printf("Apprenti: %b\n", sit[4]);
-        System.out.printf("$100k+: %b\n", sit[5]);
-        System.out.println("");
-        System.out.printf("Bundle: %b\n", this.getBundle());
-
-        System.out.println("");
-        System.out.printf("Prime total : %f\n", this.getPrime());
-         */
     }
-    
+
     /**
-     * 
+     * Methode pour informer utilisateur le prime calculer
      */
-    public void displayPrime(){
+    public void displayPrime() {
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Avec l'information, votre prime d'assurance est $" + this.getPrime());
-    } 
+    }
 
 }
